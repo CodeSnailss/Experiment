@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time span {
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+    </style>
+    <script>
+        function show() {
+            var now = new Date();
+            var hour = now.getHours();//得到小时数
+            var minute = now.getMinutes();//得到分钟数
+            document.getElementById("h").innerHTML = hour;
+            document.getElementById("m").innerHTML = minute;
+            var showTime = hour + ((minute < 10) ? ":0" : ":") + minute;
+            document.getElementById("clock").innerHTML = showTime;
+        }
+        setInterval("show()", 1000);
+    </script>
+</head>
+
+<body>
+    <div class="time">当前时间:<br><br>
+        <span id="h"></span>时
+        <span id="m"></span>分
+        <span id="time">1</span>
+    </div>
+    <input type="text" id="clock" style="width: 200px;height: 30px;border: none;padding: 2px 10px;">
+</body>
+
+</html>
